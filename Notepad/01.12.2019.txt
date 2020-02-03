@@ -1,0 +1,1026 @@
+matrix:
+-------
+public class MatrixMultiplicationExample{  
+public static void main(String args[]){  
+//creating two matrices    
+int a[][]={{1,1,1},{2,2,2},{3,3,3}};    
+int b[][]={{1,1,1},{2,2,2},{3,3,3}};    
+    
+//creating another matrix to store the multiplication of two matrices    
+int c[][]=new int[3][3];  //3 rows and 3 columns  
+    
+//multiplying and printing multiplication of 2 matrices    
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+c[i][j]=0;      
+for(int k=0;k<3;k++)      
+{      
+c[i][j]+=a[i][k]*b[k][j];      
+}//end of k loop  
+System.out.print(c[i][j]+" ");  //printing matrix element  
+}//end of j loop  
+System.out.println();//new line    
+}    
+}}  
+----------------------
+circle:
+ double perimeter = 2 * Math.PI * radius;
+  double area = Math.PI * radius * radius;
+
+
+-----------------------------------------
+import java.io.*; 
+  
+// Java code to demonstrate star pattern 
+public class GeeksForGeeks 
+{ 
+    // Function to demonstrate printing pattern 
+    public static void printTriagle(int n) 
+    { 
+        // outer loop to handle number of rows 
+        //  n in this case 
+        for (int i=0; i<n; i++) 
+        { 
+  
+            // inner loop to handle number spaces 
+            // values changing acc. to requirement 
+            for (int j=n-i; j>1; j--) 
+            { 
+                // printing spaces 
+                System.out.print(" "); 
+            } 
+   
+            //  inner loop to handle number of columns 
+            //  values changing acc. to outer loop 
+            for (int j=0; j<=i; j++ ) 
+            { 
+                // printing stars 
+                System.out.print("* "); 
+            } 
+   
+            // ending line after each row 
+            System.out.println(); 
+        } 
+    } 
+      
+    // Driver Function 
+    public static void main(String args[]) 
+    { 
+        int n = 5; 
+        printTriagle(n); 
+    } 
+} 
+------------------------------------------
+import java.util.Scanner;
+public class Edureka
+{
+public static void main(String args[])
+{
+int n, i, j, space = 1;
+System.out.print("Enter the number of rows: ");
+Scanner s = new Scanner(System.in);
+n = s.nextInt();
+space = n - 1;
+for (j = 1; j<= n; j++)
+{
+for (i = 1; i<= space; i++)
+{
+System.out.print(" ");
+}
+space--;
+for (i = 1; i <= 2 * j - 1; i++)
+{
+System.out.print("*");
+}
+System.out.println("");
+}
+space = 1;
+for (j = 1; j<= n - 1; j++)
+{
+for (i = 1; i<= space; i++)
+{
+System.out.print(" ");
+}
+space++;
+for (i = 1; i<= 2 * (n - j) - 1; i++)
+{
+System.out.print("*");
+}
+System.out.println("");
+}
+}
+}
+---------------------------------
+// Java program to calculate the maximum 
+// absolute difference of an array. 
+public class MaximumAbsoluteDifference 
+{ 
+    private static int calculateDiff(int i, int j,  
+                                     int[] array) 
+    { 
+        // Utility function to calculate 
+        // the value of absolute difference 
+        // for the pair (i, j). 
+        return Math.abs(array[i] - array[j]) +  
+                            Math.abs(i - j); 
+    } 
+  
+    // Function to return maximum absolute 
+    // difference in brute force. 
+    private static int maxDistance(int[] array) 
+    { 
+        // Variable for storing the maximum 
+        // absolute distance throughout the 
+        // traversal of loops. 
+        int result = 0; 
+  
+        // Iterate through all pairs. 
+        for (int i = 0; i < array.length; i++)  
+        { 
+            for (int j = i; j < array.length; j++) 
+            { 
+  
+                // If the absolute difference of 
+                // current pair (i, j) is greater 
+                // than the maximum difference 
+                // calculated till now, update 
+                // the value of result. 
+                result = Math.max(result, calculateDiff(i, j, array)); 
+            } 
+        } 
+        return result; 
+    } 
+  
+    // Driver program to test above function 
+    public static void main(String[] args) 
+    { 
+        int[] array = { -70, -64, -6, -56, 64, 
+                        61, -57, 16, 48, -98 }; 
+        System.out.println(maxDistance(array)); 
+    } 
+} 
+----------------------------------------
+public class GFG { 
+      
+   /* Function to reverse arr[] from  
+    start to end*/
+    static void rvereseArray(int arr[], 
+                    int start, int end) 
+    { 
+        int temp; 
+           
+        while (start < end) 
+        { 
+            temp = arr[start];  
+            arr[start] = arr[end]; 
+            arr[end] = temp; 
+            start++; 
+            end--; 
+        }  
+    }      
+       
+    /* Utility that prints out an 
+    array on a line */
+    static void printArray(int arr[],  
+                            int size) 
+    { 
+        for (int i = 0; i < size; i++) 
+             System.out.print(arr[i] + " "); 
+           
+         System.out.println(); 
+    }  
+  
+    // Driver code 
+    public static void main(String args[]) { 
+          
+        int arr[] = {1, 2, 3, 4, 5, 6}; 
+        printArray(arr, 6); 
+        rvereseArray(arr, 0, 5); 
+        System.out.print("Reversed array is \n"); 
+        printArray(arr, 6);  
+         
+    } 
+} 
+-----------------------------
+public class SmallestInArrayExample{  
+public static int getSmallest(int[] a, int total){  
+int temp;  
+for (int i = 0; i < total; i++)   
+        {  
+            for (int j = i + 1; j < total; j++)   
+            {  
+                if (a[i] > a[j])   
+                {  
+                    temp = a[i];  
+                    a[i] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
+       return a[0];  
+}  
+public static void main(String args[]){  
+int a[]={1,2,5,6,3,2};  
+int b[]={44,66,99,77,33,22,55};  
+System.out.println("Smallest: "+getSmallest(a,6));  
+System.out.println("Smallest: "+getSmallest(b,7));  
+}}  
+------------------------------------
+import java.util.Scanner;
+
+public class Exercise11 {
+   
+public static final int PASSWORD_LENGTH = 8;
+
+public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print(
+                "1. A password must have at least eight characters.\n" +
+                "2. A password consists of only letters and digits.\n" +
+                "3. A password must contain at least two digits \n" +
+                "Input a password (You are agreeing to the above Terms and Conditions.): ");
+        String s = input.nextLine();
+
+        if (is_Valid_Password(s)) {
+            System.out.println("Password is valid: " + s);
+        } else {
+            System.out.println("Not a valid password: " + s);
+        }
+
+    }
+
+    public static boolean is_Valid_Password(String password) {
+
+        if (password.length() < PASSWORD_LENGTH) return false;
+
+        int charCount = 0;
+        int numCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+
+            char ch = password.charAt(i);
+
+            if (is_Numeric(ch)) numCount++;
+            else if (is_Letter(ch)) charCount++;
+            else return false;
+        }
+
+
+        return (charCount >= 2 && numCount >= 2);
+    }
+
+    public static boolean is_Letter(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+
+
+    public static boolean is_Numeric(char ch) {
+
+        return (ch >= '0' && ch <= '9');
+    }
+
+}
+------------------------------------------
+import java.util.Scanner;
+
+public class Program1
+{
+public static void main(String args[])
+{
+String ename;
+int digital1,digital2,digital3;
+int java1,java2,java3;
+int networking1,networking2,networking3;
+int digitalsum,digitalavg;
+int javasum, javaavg;
+int networkingsum,networkingavg;
+Scanner sc =new Scanner(System.in);
+System.out.println("Enter the Scholor1 name:");
+ename=sc.next();
+System.out.println("Enter the marks of digital logics:");
+digital1=sc.nextInt();
+System.out.println("Enter the marks in java:");
+java1=sc.nextInt();
+System.out.println("Enter the marks in net working:");
+networking1=sc.nextInt();
+System.out.println("Enter Scholor 2:");
+ename=sc.next();
+System.out.println("Enter the marks of digital logics:");
+digital2=sc.nextInt();
+System.out.println("Enter the marks in java:");
+java2=sc.nextInt();
+System.out.println("Enter the marks in net working:");
+networking2=sc.nextInt();
+System.out.println("Enter Scholor 3:");
+ename=sc.next();
+System.out.println("Enter the marks of digital logics:");
+digital3=sc.nextInt();
+System.out.println("Enter the marks in java:");
+java3=sc.nextInt();
+System.out.println("Enter the marks in net working:");
+networking3=sc.nextInt();
+digitalsum=digital1+digital2+digital3;
+digitalavg=digitalsum/3;
+System.out.println("Average of Digital_logic of three Scholors is:"+digitalavg);
+javasum=java1+java2+java3;
+javaavg=javasum/3;
+System.out.println("Average of java of three Scholors is:"+javaavg);
+networkingsum=networking1+networking2+networking3;
+networkingavg=networkingsum/3;
+System.out.println("Average of networking of three Scholors is:"+networkingavg);
+}
+
+}
+---------------------------------------
+
+
+
+import java.util.Scanner;
+
+public class Palindrome
+{
+    public static void main(String args[])
+    {
+        String a, b = "";
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the string you want to check:");
+        a = s.nextLine();
+        int n = a.length();
+        for(int i = n - 1; i >= 0; i--)
+        {
+            b = b + a.charAt(i);
+        }
+        if(a.equalsIgnoreCase(b))
+        {
+            System.out.println("The string is palindrome.");
+        }
+        else
+        {
+            System.out.println("The string is not palindrome.");
+        }
+    }
+}
+---------------------------------------------
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Exercise11 {
+    
+public static final int PASSWORD_LENGTH = 8;
+
+public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print(
+                "1. A password must have at least eight characters.\n" +
+                "2. A password consists of only letters and digits.\n" +
+                "3. A password must contain at least two digits \n" +
+                "Input a password (You are agreeing to the above Terms and Conditions.): ");
+        String s = input.nextLine();
+
+        if (is_Valid_Password(s)) {
+            System.out.println("Password is valid: " + s);
+        } else {
+            System.out.println("Not a valid password: " + s);
+        }
+
+    }
+
+    public static boolean is_Valid_Password(String password) {
+
+        if (password.length() < PASSWORD_LENGTH) return false;
+
+        int charCount = 0;
+        int numCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+
+            char ch = password.charAt(i);
+
+            if (is_Numeric(ch)) numCount++;
+            else if (is_Letter(ch)) charCount++;
+            else return false;
+        }
+
+
+        return (charCount >= 2 && numCount >= 2);
+    }
+
+    public static boolean is_Letter(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+
+
+    public static boolean is_Numeric(char ch) {
+
+        return (ch >= '0' && ch <= '9');
+    }
+
+}  
+---------------------------------------------
+22/11
+------
+
+
+
+11
+public class Program11 {
+ public static void main(String args[]) {
+  for(int i = 1; i <= 5; ++i) {
+   for(int j = 5; j > i; --j)
+    System.out.print(" ");
+
+   for(int k = 1; k < (i*2); ++k)
+    System.out.print("*");
+
+   System.out.print("\n");
+  }
+ }
+}
+
+
+3
+
+import java.util.Scanner;
+public class Program3 {
+ public static final int PASSWORD_LENGTH = 8;
+ public static void main(String[] args) {
+  Scanner input = new Scanner(System.in);  //initializing scanner
+  System.out.print("Input a password : ");
+  String s = input.nextLine();
+  if (is_Valid_Password(s)) {
+   System.out.println("Password is valid: " + s);
+  } else {
+   System.out.println("Not a valid password: " + s);
+  }
+ }
+ public static boolean is_Valid_Password(String password) {
+  if (password.length() < PASSWORD_LENGTH)
+   return false;
+  int charCount = 0;
+  int numCount = 0;
+  for (int i = 0; i < password.length(); i++) {
+   char ch = password.charAt(i);
+   if (is_Numeric(ch))
+    numCount++;
+   else if (is_Letter(ch))
+    charCount++;
+   else
+    return false;
+  }
+  return (charCount >= 2 && numCount >= 2);
+ }
+ public static boolean is_Letter(char ch) {
+  ch = Character.toUpperCase(ch);
+  return (ch >= 'A' && ch <= 'Z');
+ }
+ public static boolean is_Numeric(char ch) {
+  return (ch >= '0' && ch <= '9');
+ }
+}
+
+2--- first half
+
+public class program1 {
+ public static void main(String[] args) {
+  System.out.println("enter the size of the array:");
+  Scanner sc= new Scanner(System.in);
+  int num=sc.nextInt();
+  int a[]=new int[num];
+  int b[]=new int[num];
+  int c[]=new int[num];
+  //int d[]=new int[num];
+  System.out.println("enter the values for first array");
+  for(int i=0;i<num;i++)
+  {
+   a[i]=sc.nextInt();
+  }
+  System.out.println("enter the values for first array");
+  for(int i=0;i<num;i++)
+  {
+   b[i]=sc.nextInt();
+  }
+  Arrays.sort(a);
+  Arrays.sort(b);
+  System.out.println("common values are:");
+  for(int i=0;i<num;i++)
+  {
+   for(int j=0;j<num;j++)
+   {
+   if(a[i]==b[j])
+   {
+    c[i]=a[i];
+   }}
+   System.out.print(c[i]+" ");
+  }
+9----------------------
+
+9th progra
+
+
+
+
+
+public class ReverseString
+
+{
+
+    public static void main(String[] args)
+
+    {
+
+        System.out.println("Enter string to reverse:");
+
+
+
+        Scanner read = new Scanner(System.in);
+
+        String str = read.nextLine();
+
+        String reverse = "";
+
+
+
+
+
+        for(int i = str.length() - 1; i >= 0; i--)
+
+        {
+
+            reverse = reverse + str.charAt(i);
+
+        }
+
+
+
+        System.out.println("Reversed string is:");
+
+        System.out.println(reverse);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+
+
+public class JavaProgram
+
+{
+
+   public static void main(String args[])
+
+   {
+
+      String str;
+
+      int len;
+
+      Scanner scan = new Scanner(System.in);
+
+
+
+      System.out.print("Enter Your Name : ");
+
+      str = scan.nextLine();
+
+      len = str.length();
+
+
+
+      System.out.print("Length of Entered String is " + len);
+
+   }
+
+}
+
+
+
+
+
+
+----------5
+
+5
+
+public class Palindrome
+
+{
+
+    public static void main(String args[])
+
+    {
+
+        String a, b = "";
+
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the string you want to check:");
+
+        a = s.nextLine();
+
+        int n = a.length();
+
+        for(int i = n - 1; i >= 0; i--)
+
+        {
+
+            b = b + a.charAt(i);
+
+        }
+
+        if(a.equalsIgnoreCase(b))
+
+        {
+
+            System.out.println("The string is palindrome.");
+
+        }
+
+        else
+
+        {
+
+            System.out.println("The string is not palindrome.");
+
+        }
+
+    }
+
+}
+--------6
+
+6
+
+
+import java.util.Scanner;
+
+public class ArrraySmall 
+{
+
+	public static void main(String[] args) 
+	{
+		int[] array=new int[10];
+		int temp=0;
+			
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter array elements");
+		for(int i=0;i<10;i++)
+		{
+			array[i]=sc.nextInt();
+		}
+		for(int i=0;i<10;i++)
+		{
+			for(int j=i+1;j<10;j++)
+			{
+				if(array[i]>=array[j])
+				{
+					temp=array[i];
+					array[i]=array[j];
+					array[i]=temp;
+				}
+			}
+		}
+		System.out.println(array[array.length]);
+	}
+}
+
+
+import java.util.Scanner;
+
+public class StringComp {
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the password");
+		String pswd=sc.next();
+		if(pswd.length()<=10)
+		{
+			
+		}
+		
+
+	}
+
+}
+
+import java.util.Scanner;
+public class ArrayValues 
+{
+
+	public static void main(String[] args) 
+	{
+		int flag=0;
+	int[] array1=new int[5];
+	int[] array2=new int[5];
+	Scanner sc=new Scanner(System.in);
+	
+	System.out.println("Enter First array elements"); 
+	for(int i=0;i<5;i++)
+	{
+		array1[i]=sc.nextInt();
+	}
+	
+	System.out.println("Enter Second array elements"); 
+	for(int i=0;i<5;i++)
+	{
+		array2[i]=sc.nextInt();
+	}
+	
+	
+	//comparing elements in two arrays
+	for(int i=0;i<5;i++)
+	{
+		for(int j=0;j<5;j++)
+		{
+		if(array1[i]==array2[j])
+		{
+			System.out.println("common element is "+array1[i]);
+			i++;
+			flag=1;
+		}
+		}
+	}
+	if (flag==0)
+		System.out.println("Distinct elements");
+	}
+}
+
+import java.util.Scanner;
+
+public class Day {
+
+	public static void main(String[] args) 
+	{
+		int temp,temp1,temp2,month, year, week, day;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of days:");
+		temp = sc.nextInt();
+		year=temp/365;
+		temp1=temp%365;
+		System.out.print(year+"year ");
+		week=temp/7;
+		month=temp/30;
+		System.out.print(month+"month ");
+		temp2=week&7;
+		System.out.print(week+"weeks ");
+		day=temp;
+		System.out.print(day+"days ");
+		
+	}
+}
+
+	
+import java.util.Scanner;
+public class Marks 
+{
+public static void main(String[] args) throws ArrayIndexOutOfBoundsException
+	{
+	Scanner sc=new Scanner(System.in);
+	
+	int[] physics=new int[6];
+	int[] chemistry=new int[6];
+	int[] maths=new int[6];
+	
+	int[] physics1=new int[3];
+	int[] chemistry1=new int[3];
+	int[] maths1=new int[3];
+	
+	System.out.println("Marks for scholars in ECP-01");
+	System.out.println("Enter the marks for physics:");
+	for(int i=0;i<3;i++)
+	{
+		physics[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Chemistry:");
+	for(int i=0;i<3;i++)
+	{
+		chemistry[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Maths:");
+	for(int i=0;i<3;i++)
+	{
+		maths[i]=sc.nextInt();
+	}
+	
+	
+	System.out.println("Marks for scholars in ECP-02");
+	System.out.println("Enter the marks for physics:");
+	for(int i=0;i<3;i++)
+	{
+		physics1[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Chemistry:");
+	for(int i=0;i<3;i++)
+	{
+		chemistry1[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Maths:");
+	for(int i=0;i<3;i++)
+	{
+		maths1[i]=sc.nextInt();
+	}
+	
+	
+	
+	System.out.println("Highest Marks for scholars in ECP-01");
+	
+	int phyhigh=highest(physics);
+	System.out.println("Highest physics marks:"+phyhigh);
+	
+	int chemhigh=highest(chemistry);
+	System.out.println("Highest Chemistry marks:"+chemhigh);
+	
+	int mathhigh=highest(maths);
+	System.out.println("Highest Maths marks:"+mathhigh);
+	
+	System.out.println("Highest Marks for scholars in ECP-01");
+	
+	int phy1high=highest(physics1);
+	System.out.println("Highest physics marks:"+phy1high);
+	
+	int chem1high=highest(chemistry1);
+	System.out.println("Highest Chemistry marks:"+chem1high);
+	
+	int math1high=highest(maths1);
+	System.out.println("Highest Maths marks:"+math1high);
+	}
+	
+	
+public static int highest(int[] array)
+{	
+	
+	int marks[]=new int[3];
+	int temp=0;
+	for(int i=0;i<3;i++)
+	{
+		for(int j=i+1;j<3;i++)
+		{
+			temp=array[i];
+			array[i]=array[j];
+			array[j]=temp;
+		}
+	marks[i]=array[i];
+	}
+	return marks[0];
+}
+
+}
+
+import java.util.Scanner;
+public class Marks 
+{
+public static void main(String[] args) throws ArrayIndexOutOfBoundsException
+	{
+	Scanner sc=new Scanner(System.in);
+	
+	int[] physics=new int[6];
+	int[] chemistry=new int[6];
+	int[] maths=new int[6];
+	
+	int[] physics1=new int[3];
+	int[] chemistry1=new int[3];
+	int[] maths1=new int[3];
+	
+	System.out.println("Marks for scholars in ECP-01");
+	System.out.println("Enter the marks for physics:");
+	for(int i=0;i<3;i++)
+	{
+		physics[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Chemistry:");
+	for(int i=0;i<3;i++)
+	{
+		chemistry[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Maths:");
+	for(int i=0;i<3;i++)
+	{
+		maths[i]=sc.nextInt();
+	}
+	
+	
+	System.out.println("Marks for scholars in ECP-02");
+	System.out.println("Enter the marks for physics:");
+	for(int i=0;i<3;i++)
+	{
+		physics1[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Chemistry:");
+	for(int i=0;i<3;i++)
+	{
+		chemistry1[i]=sc.nextInt();
+	}
+	System.out.println("Enter the marks for Maths:");
+	for(int i=0;i<3;i++)
+	{
+		maths1[i]=sc.nextInt();
+	}
+	
+	
+	
+	System.out.println("Highest Marks for scholars in ECP-01");
+	
+	int phyhigh=highest(physics);
+	System.out.println("Highest physics marks:"+phyhigh);
+	
+	int chemhigh=highest(chemistry);
+	System.out.println("Highest Chemistry marks:"+chemhigh);
+	
+	int mathhigh=highest(maths);
+	System.out.println("Highest Maths marks:"+mathhigh);
+	
+	System.out.println("Highest Marks for scholars in ECP-01");
+	
+	int phy1high=highest(physics1);
+	System.out.println("Highest physics marks:"+phy1high);
+	
+	int chem1high=highest(chemistry1);
+	System.out.println("Highest Chemistry marks:"+chem1high);
+	
+	int math1high=highest(maths1);
+	System.out.println("Highest Maths marks:"+math1high);
+	}
+	
+	
+public static int highest(int[] array)
+{	
+	
+	int marks[]=new int[3];
+	int temp=0;
+	for(int i=0;i<3;i++)
+	{
+		for(int j=i+1;j<3;i++)
+		{
+			temp=array[i];
+			array[i]=array[j];
+			array[j]=temp;
+		}
+	marks[i]=array[i];
+	}
+	return marks[0];
+}
+
+}
+
+
+import java.util.Scanner;
+public class StringCharacter 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a string");
+		String string=sc.next();
+		int length=string.length();
+		if(length%2!=0)
+		{
+		 char c= (char) string.codePointAt(length/2);
+		 System.out.println("The middle character is "+c);	
+		}
+		else
+		{
+			char c1=  (char) string.codePointAt((length/2)-1);
+			char c2=  (char) string.codePointAt(length/2);
+			System.out.println("The middle characters are "+c1+" "+c2);
+		}
+	}
+
+}
+
+
+public class Maxvalue {
+public static void main(String args[]){
+   int array[] = new int[]{9, 1, 5, 4, 8, 10};
+   int Maxvalue = getMaxvalue(array);
+   
+   System.out.println("Maxvalue  = "+Maxvalue );
+ }
+ public static int getMaxvalue (int[] inputArray){
+    int MaxValue = inputArray[0];
+    for(int i=1;i < inputArray.length;i++){
+      if(inputArray[i] > MaxValue){
+         MaxValue = inputArray[i];
+      }
+    }
+    return MaxValue;
+ }
+}

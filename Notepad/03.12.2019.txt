@@ -1,0 +1,828 @@
+
+S.No.
+
+Pre-requisites (TOC topics)
+
+SW and HW requirements
+
+Question
+
+Objective
+
+Duration (in Mins)
+
+Marks
+
+1
+
+Data types , Operators, Control Structures
+
+JDK 1.7/1.8, NetBeans IDE / Ecllipse IDE, Notepad, Command Prompt
+
+Write a program to print the series 0,3,8,15,24,…….. till n terms input by the user.
+
+To compute the series and work with the data types and loops
+
+30
+
+10
+
+2
+
+Data types , Operators, Control Structures
+
+JDK 1.7/1.8, NetBeans IDE / Ecllipse IDE, Notepad, Command Prompt
+
+Input 10 integers in an array and sort them using bubble sorting technique.
+
+to demonstrate the use of various sorting tecnhiques
+
+30
+
+10
+
+3
+
+OOPS Concepts, Use of Classes and Objects, Polymorphism
+
+JDK 1.7/1.8, NetBeans IDE / Ecllipse IDE, Notepad, Command Prompt
+
+Write a class to overload a method volume.
+
+to create overloaded methods and call them
+
+20
+
+10
+
+4
+
+OOPS Concepts, Use of Classes and Objects, Polymorphism, Logical constructs, Scanner Class, Util Package
+
+JDK 1.7/1.8, NetBeans IDE / Ecllipse IDE, Notepad, Command Prompt
+
+"Write a program to generate the electricity bill for a consumer with the details provide below: a) Fixed meter rental INR 250.00 per month b) First 100 units are charged @3.25/unit. c) Next 200 units are charged @4.75/unit. d) Remaining units are charged @6.35/unit. e) Service tax is 14.75% on the final amount. Make all necessary assumptions wherever needed and make appropriate methods to implement the same using OOPS concepts. Use Classes and methods. Use exceptions wherever applicable."
+
+learn about the making of applications and the computation based on various data types and logic
+
+70
+
+30
+
+5
+
+Classes & Packages
+
+JDK 1.7/1.8, NetBeans IDE / Ecllipse IDE, Notepad, Command Prompt
+
+Create a project College and define two packages namely Student & Classroom in it. Define classes viz. Student and Training in these packages with suitable methods and constructors respectively. Create a main class that uses this class to create student objects using arrays.
+
+To understand and implement classes inside a package
+
+60
+
+25
+
+6
+
+Control structures & Command line arguments
+
+JDK 1.7/1.8, NetBeans IDE / Ecllipse IDE, Notepad, Command Prompt
+
+Write a program to accepts 3 command line arguments from the user namely full name, address, and email. If all 3 arguments are given then print all the details otherwise print "Insufficient data".
+
+To demonstrate the use of command line arguments
+
+30
+
+15
+
+240
+
+100
+replace every element with the next greatest element (from right side)
+-----------------------------------------------------
+import java.io.*;
+import java.util.Arrays;
+public class Main 
+{
+   public static void main (String[] args)
+    {
+        int nums[] = {45, 20, 100, 23, -5, 2, -6};
+		int result[];
+		System.out.println("Original Array ");
+        System.out.println(Arrays.toString(nums));
+
+        result = next_greatest_num(nums);
+        System.out.println("The modified array:");
+        System.out.println(Arrays.toString(result));
+    }
+ 
+    static int [] next_greatest_num(int arr_nums[])
+    {
+        int size = arr_nums.length;
+        int max_from_right_num =  arr_nums[size-1];
+        arr_nums[size-1] = -1;
+ 
+        for (int i = size-2; i >= 0; i--)
+        {
+            int temp = arr_nums[i];
+            arr_nums[i] = max_from_right_num;
+            if(max_from_right_num < temp)
+            max_from_right_num = temp;
+        }
+		return arr_nums;
+    } 
+}
+---------------------------------------------------------
+
+
+
+import java.util.Arrays;
+ 
+public class Main
+{
+     static int[] rearrange(int[] new_arra, int n)
+    {
+        int temp[] = new int[n];
+     
+         int small_num = 0, large_num = n-1;
+         boolean flag = true;
+     
+        for (int i=0; i < n; i++)
+        {
+            if (flag)
+                temp[i] = new_arra[large_num--];
+            else
+                temp[i] = new_arra[small_num++];
+     
+            flag = !flag;
+        }
+     
+        return temp;
+    }
+ 
+    public static void main(String[] args) 
+    {
+        int nums[] = new int[]{10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int result[];
+         
+        System.out.println("Original Array ");
+        System.out.println(Arrays.toString(nums));
+         
+        result = rearrange(nums,nums.length);
+         
+        System.out.println("New Array ");
+        System.out.println(Arrays.toString(result));
+     
+    }
+}
+----------------------------------------------------------------
+class ArrayDemo{
+     public static void main(String args[]){
+        int array[] = new int[7];
+        for (int count=0;count<7;count++){
+           array[count]=count+1;
+       }
+       for (int count=0;count<7;count++){
+           System.out.println("array["+count+"] = "+array[count]);
+       }
+      //System.out.println("Length of Array  =  "+array.length);
+      // array[8] =10;
+      }
+}
+--------------------------------------------------------------
+merge
+----------
+Live Demo
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+   public static void main(String args[]) {
+      String a[] = { "A", "E", "I" };
+      String b[] = { "O", "U" };
+      List list = new ArrayList(Arrays.asList(a));
+      list.addAll(Arrays.asList(b));
+      Object[] c = list.toArray();
+      System.out.println(Arrays.toString(c));
+   }
+}
+
+public class HelloWorld {
+   public static void main(String[] args) {
+      int[]a = {1,2,3,4};
+      int[]b = {4,16,1,2,3,22};
+      int[]c = new int[a.length+b.length];
+      int count = 0;
+      
+      for(int i = 0; i < a.length; i++) { 
+         c[i] = a[i];
+         count++;
+      } 
+      for(int j = 0; j < b.length;j++) { 
+         c[count++] = b[j];
+      } 
+      for(int i = 0;i < c.length;i++) System.out.print(c[i]+" ");
+   } 
+}
+----------------------------------
+reverse
+------------
+Live Demo
+public class HelloWorld {
+   public static void main(String[] args) {
+      int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+      System.out.println("Array before reverse:");
+      
+      for (int i = 0; i < numbers.length; i++) {
+         System.out.print(numbers[i] + " ");
+      } 
+      for (int i = 0; i < numbers.length / 2; i++) {
+         int temp = numbers[i];
+         numbers[i] = numbers[numbers.length - 1 - i];
+         numbers[numbers.length - 1 - i] = temp;
+      } 
+      System.out.println("\nArray after reverse:");
+      for (int i = 0; i < numbers.length; i++) {
+         System.out.print(numbers[i] + " ");
+      } 
+   }
+}
+---------------------------------------------------
+large&small
+---------
+Live Demo
+public class HelloWorld {
+   public static void main(String[] args) {
+      int numbers[] = new int[]{8, 2, 7, 1, 4, 9, 5};
+      int s = numbers[0];
+      int l = numbers[0];
+      
+      for(int i = 1; i < numbers.length; i++) {
+         if(numbers[i] > l)l = numbers[i];
+         else if (numbers[i] < s)s = numbers[i];
+      } 
+      System.out.println("Largest Number is : " + l);
+      System.out.println("Smallest Number is : " + s);
+   }
+}
+-----------------------------------------------------
+common elements
+---------------
+Live Demo
+public class HelloWorld {
+   public static void main(String a[]) {
+      int[] arr1 = {4,7,3,9,2};
+      int[] arr2 = {3,2,12,9,40,32,4};
+      
+      for(int i = 0;i < arr1.length; i++) {
+         for(int j = 0; j < arr2.length; j++) {
+            if(arr1[i] == arr2[j]) { 
+               System.out.println(arr1[i]);
+            } 
+         } 
+      }
+   }
+}
+-----------------------------------------------
+remove
+------
+Live Demo
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+   public static void main(String[] args) {
+      ArrayList<Integer> arr = new ArrayList<Integer>(5);
+      arr.add(20);
+      arr.add(15);
+      arr.add(30);
+      arr.add(45);
+      
+      System.out.println("Size of list: " + arr.size());
+      for (Integer number : arr) {
+         System.out.println("Number = " + number);
+      } 
+      arr.remove(2);
+      System.out.println("Now, Size of list: " + arr.size());
+      
+      for (Integer number : arr) {
+         System.out.println("Number = " + number);
+      } 
+   }
+}   
+-----------------------------
+insert elements at specified position in linked list
+---------------------
+import java.util.LinkedList;
+public class Exercise9 {
+ public static void main(String[] args) {
+  // create an empty linked list
+  LinkedList <String> l_list = new LinkedList <String> ();
+  // use add() method to add values in the linked list
+  l_list.add("Red");
+  l_list.add("Green");
+  l_list.add("Black");
+
+  // print original list
+  System.out.println("Original linked list:" + l_list);
+
+  // create a new collection and add some elements
+
+  LinkedList <String> new_l_list = new LinkedList <String> ();
+  new_l_list.add("White");
+  new_l_list.add("Pink");
+
+  // Add the collection in the second position of the existing linked list
+  l_list.addAll(1, new_l_list);
+
+  // print the new list
+  System.out.println("LinkedList:" + l_list);
+ }
+}
+-----------------------------
+
+area
+----
+Area of Rectangle = Width * Height
+                  = 10 * 5
+                  = 50
+Volume os sphere = (4.0/3.0) * pie * (radius * radius * radius); 
+       = (4.0/3.0) * 3.14 * 48 * 48 * 48
+       = 463433.132812 
+Area of Pentagon = (5.0/2.0) * s * a
+                 = (5.0/2.0) * 13 * 5
+                 = 162.5
+Area of Parallelogram = base * height;
+                      = 4 * 18
+                      = 72
+Area of Square = a2 
+               = 132
+               = 169
+Volume surface area of sphere = 4 * pie * (radius * radius);
+       = 4 * 3.14 * 37 * 37
+       = 17210.285714
+Volume of cone= pie * radius * radius * height/3;
+       = 3.14 * 38 * 38 * 35/3
+       = 48766.666667
+Temperature in Fahrenheit = ((celsius * 9) / 5) + 32
+Temperature in Celsius = ((Fahrenheit-32)*5)/9
+--------------------------------------------------------------
+patterns
+-----
+import java.io.*; 
+  
+// Java code to demonstrate star pattern 
+public class GeeksForGeeks 
+{ 
+    // Function to demonstrate printing pattern 
+    public static void printStars(int n) 
+    { 
+        int i, j; 
+  
+        // outer loop to handle number of rows 
+        //  n in this case 
+        for(i=0; i<n; i++) 
+        { 
+  
+            // inner loop to handle number spaces 
+            // values changing acc. to requirement 
+            for(j=2*(n-i); j>=0; j--) 
+            { 
+                // printing spaces 
+                System.out.print(" "); 
+            } 
+             
+            //  inner loop to handle number of columns 
+            //  values changing acc. to outer loop 
+            for(j=0; j<=i; j++) 
+            { 
+                // printing stars 
+                System.out.print("* "); 
+            } 
+              
+            // ending line after each row 
+            System.out.println(); 
+        } 
+    } 
+  
+    // Driver Function 
+    public static void main(String args[]) 
+    { 
+        int n = 5; 
+        printStars(n); 
+    } 
+} 
+--------------------------------------------
+insert an element into the array list at the first position.
+--------------------------------------
+import java.util.*;
+  public class Exercise3 {
+  public static void main(String[] args) {
+  // Creae a list and add some colors to the list
+  List<String> list_Strings = new ArrayList<String>();
+  list_Strings.add("Red");
+  list_Strings.add("Green");
+  list_Strings.add("Orange");
+  list_Strings.add("White");
+  list_Strings.add("Black");
+  // Print the list
+  System.out.println(list_Strings);
+  // Now insert a color at the first and last position of the list
+  list_Strings.add(0, "Pink");
+  list_Strings.add(5, "Yellow");
+  // Print the list
+  System.out.println(list_Strings);
+ }
+}
+-------------------------------
+the sum of elements of each row and each column of a matrix.
+-------------------------
+public class SumofRowColumn    
+{    
+    public static void main(String[] args) {    
+        int rows, cols, sumRow, sumCol;    
+            
+        //Initialize matrix a    
+        int a[][] = {       
+                        {1, 2, 3},    
+                        {4, 5, 6},    
+                        {7, 8, 9}    
+                    };    
+              
+          //Calculates number of rows and columns present in given matrix    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        //Calculates sum of each row of given matrix    
+        for(int i = 0; i < rows; i++){    
+            sumRow = 0;    
+            for(int j = 0; j < cols; j++){    
+              sumRow = sumRow + a[i][j];    
+            }    
+            System.out.println("Sum of " + (i+1) +" row: " + sumRow);    
+        }    
+            
+        //Calculates sum of each column of given matrix    
+        for(int i = 0; i < cols; i++){    
+            sumCol = 0;    
+            for(int j = 0; j < rows; j++){    
+              sumCol = sumCol + a[j][i];    
+            }    
+            System.out.println("Sum of " + (i+1) +" column: " + sumCol);    
+        }    
+    }    
+}  
+-------------------------------------
+lower-case characters in the string to upper-case and upper-case characters to lower-case.
+--------------------------------------------------------------
+public class changeCase {    
+    public static void main(String[] args) {    
+            
+        String str1="Great Power";    
+        StringBuffer newStr=new StringBuffer(str1);    
+            
+        for(int i = 0; i < str1.length(); i++) {    
+                
+            //Checks for lower case character    
+            if(Character.isLowerCase(str1.charAt(i))) {    
+                //Convert it into upper case using toUpperCase() function    
+                newStr.setCharAt(i, Character.toUpperCase(str1.charAt(i)));    
+            }    
+            //Checks for upper case character    
+            else if(Character.isUpperCase(str1.charAt(i))) {    
+                //Convert it into upper case using toLowerCase() function    
+                newStr.setCharAt(i, Character.toLowerCase(str1.charAt(i)));    
+            }    
+        }    
+        System.out.println("String after case conversion : " + newStr);    
+    }    
+}  
+------------------------------------------------------
+find out the maximum and minimum occurring character.
+-------------------------------------------------
+public class Characters     
+   
+   public static void main(String[] args) {    
+      String str = "grass is greener on the other side";    
+      int[] freq = new int[str.length()];    
+      char minChar = str.charAt(0), maxChar = str.charAt(0);    
+      int i, j, min, max;            
+          
+      //Converts given string into character array    
+      char string[] = str.toCharArray();    
+          
+      //Count each word in given string and store in array freq    
+      for(i = 0; i < string.length; i++) {    
+          freq[i] = 1;    
+          for(j = i+1; j < string.length; j++) {    
+              if(string[i] == string[j] && string[i] != ' ' && string[i] != '0') {    
+                  freq[i]++;    
+                      
+                  //Set string[j] to 0 to avoid printing visited character    
+                  string[j] = '0';    
+              }    
+          }    
+      }    
+          
+      //Determine minimum and maximum occurring characters    
+      min = max = freq[0];    
+      for(i = 0; i <freq.length; i++) {    
+              
+          //If min is greater than frequency of a character     
+          //then, store frequency in min and corresponding character in minChar    
+          if(min > freq[i] && freq[i] != '0') {    
+              min = freq[i];    
+              minChar = string[i];    
+          }    
+          //If max is less than frequency of a character     
+          //then, store frequency in max and corresponding character in maxChar    
+          if(max < freq[i]) {    
+              max = freq[i];    
+              maxChar = string[i];    
+          }    
+      }    
+          
+      System.out.println("Minimum occurring character: " + minChar);    
+      System.out.println("Maximum occurring character: " + maxChar);    
+  }    
+   -------------------------------------------------------------
+remove the duplicate nodes from the given singly linked list.
+---------------------------------------------------------------
+public class RemoveDuplicate {  
+  
+    //Represent a node of the singly linked list  
+    class Node{  
+        int data;  
+        Node next;  
+  
+        public Node(int data) {  
+            this.data = data;  
+            this.next = null;  
+        }  
+    }  
+  
+    //Represent the head and tail of the singly linked list  
+    public Node head = null;  
+    public Node tail = null;  
+  
+    //addNode() will add a new node to the list  
+    public void addNode(int data) {  
+        //Create a new node  
+        Node newNode = new Node(data);  
+  
+        //Checks if the list is empty  
+        if(head == null) {  
+            //If list is empty, both head and tail will point to new node  
+            head = newNode;  
+            tail = newNode;  
+        }  
+        else {  
+            //newNode will be added after tail such that tail's next will point to newNode  
+            tail.next = newNode;  
+            //newNode will become new tail of the list  
+            tail = newNode;  
+        }  
+    }  
+  
+    //removeDuplicate() will remove duplicate nodes from the list  
+    public void removeDuplicate() {  
+        //Node current will point to head  
+        Node current = head, index = null, temp = null;  
+  
+        if(head == null) {  
+            return;  
+        }  
+        else {  
+            while(current != null){  
+                //Node temp will point to previous node to index.  
+                temp = current;  
+                //Index will point to node next to current  
+                index = current.next;  
+  
+                while(index != null) {  
+                    //If current node's data is equal to index node's data  
+                    if(current.data == index.data) {  
+                        //Here, index node is pointing to the node which is duplicate of current node  
+                        //Skips the duplicate node by pointing to next node  
+                        temp.next = index.next;  
+                    }  
+                    else {  
+                        //Temp will point to previous node of index.  
+                        temp = index;  
+                    }  
+                    index = index.next;  
+                }  
+                current = current.next;  
+            }  
+        }  
+    }  
+  
+    //display() will display all the nodes present in the list  
+    public void display() {  
+        //Node current will point to head  
+        Node current = head;  
+        if(head == null) {  
+            System.out.println("List is empty");  
+            return;  
+        }  
+        while(current != null) {  
+            //Prints each node by incrementing pointer  
+            System.out.print(current.data + " ");  
+            current = current.next;  
+        }  
+        System.out.println();  
+    }  
+  
+    public static void main(String[] args) {  
+  
+        RemoveDuplicate sList = new RemoveDuplicate();  
+  
+        //Adds data to the list  
+        sList.addNode(1);  
+        sList.addNode(2);  
+        sList.addNode(3);  
+        sList.addNode(2);  
+        sList.addNode(2);  
+        sList.addNode(4);  
+        sList.addNode(1);  
+  
+        System.out.println("Originals list: ");  
+        sList.display();  
+  
+        //Removes duplicate nodes  
+        sList.removeDuplicate();  
+  
+        System.out.println("List after removing duplicates: ");  
+        sList.display();  
+    }  
+} 
+---------------------------------------------------------
+copy all the elements of one array into another
+-------------------------------------
+public class CopyArray {    
+    public static void main(String[] args) {        
+             //Initialize array     
+        int [] arr1 = new int [] {1, 2, 3, 4, 5};     
+         //Create another array arr2 with size of arr1    
+        int arr2[] = new int[arr1.length];    
+        //Copying all elements of one array into another    
+        for (int i = 0; i < arr1.length; i++) {     
+            arr2[i] = arr1[i];     
+        }      
+         //Displaying elements of array arr1     
+        System.out.println("Elements of original array: ");    
+        for (int i = 0; i < arr1.length; i++) {     
+           System.out.print(arr1[i] + " ");    
+        }     
+            
+        System.out.println();    
+            
+        //Displaying elements of array arr2     
+        System.out.println("Elements of new array: ");    
+        for (int i = 0; i < arr2.length; i++) {     
+           System.out.print(arr2[i] + " ");    
+        }     
+    }    
+}  
+-----------------------------------------------------
+armstrong
+--------
+class ArmstrongExample{  
+  public static void main(String[] args)  {  
+    int c=0,a,temp;  
+    int n=153;//It is the number to check armstrong  
+    temp=n;  
+    while(n>0)  
+    {  
+    a=n%10;  
+    n=n/10;  
+    c=c+(a*a*a);  
+    }  
+    if(temp==c)  
+    System.out.println("armstrong number");   
+    else  
+        System.out.println("Not armstrong number");   
+   }  
+}  
+------------------------------------
+subtraction of two matrices.
+--------------------------
+public class Sub_Matrix  
+{  
+    public static void main(String[] args) {  
+        int rows, cols;  
+  
+        //Initialize matrix a  
+          int a[][] = {  
+                          {4, 5, 6},  
+                          {3, 4, 1},  
+                          {1, 2, 3}  
+                       };  
+  
+          //Initialize matrix b  
+          int b[][] = {  
+                          {2, 0, 3},  
+                         {2, 3, 1},  
+                         {1, 1, 1}  
+                     };  
+  
+          //Calculates number of rows and columns present in given matrix  
+          rows = a.length;  
+        cols = a[0].length;  
+  
+          //Array diff will hold the result  
+        int diff[][] = new int[rows][cols];  
+  
+        //Performs subtraction of matrices a and b. Store the result in matrix diff  
+        for(int i = 0; i < rows; i++){  
+            for(int j = 0; j < cols; j++){  
+                diff[i][j] = a[i][j] - b[i][j];  
+            }  
+        }  
+  
+        System.out.println("Subtraction of two matrices: ");  
+        for(int i = 0; i < rows; i++){  
+            for(int j = 0; j < cols; j++){  
+               System.out.print(diff[i][j] + " ");  
+            }  
+            System.out.println();  
+        }  
+    }  
+}  
+-------------------------------------------------------
+search a node in the given singly linked list.
+-----------------------------------------
+public class SearchLinkedList {  
+    //Represent a node of the singly linked list  
+    class Node{  
+        int data;  
+        Node next;  
+        public Node(int data) {  
+            this.data = data;  
+            this.next = null;  
+        }  
+    }  
+    //Represent the head and tail of the singly linked list  
+    public Node head = null;  
+    public Node tail = null;  
+    //addNode() will add a new node to the list  
+    public void addNode(int data) {  
+        //Create a new node  
+        Node newNode = new Node(data);  
+        //Checks if the list is empty  
+        if(head == null) {  
+            //If list is empty, both head and tail will point to new node  
+            head = newNode;  
+            tail = newNode;  
+        }  
+        else {  
+            //newNode will be added after tail such that tail's next will point to newNode  
+            tail.next = newNode;  
+            //newNode will become new tail of the list  
+            tail = newNode;  
+        }  
+    }  
+    //searchNode() will search for a given node in the list  
+    public void searchNode(int data) {  
+        Node current = head;  
+        int i = 1;  
+        boolean flag = false;  
+        //Checks whether list is empty  
+        if(head == null) {  
+            System.out.println("List is empty");  
+        }  
+        else {  
+            while(current != null) {  
+                 //Compares node to be found with each node present in the list  
+                if(current.data == data) {  
+                    flag = true;  
+                    break;  
+                }  
+                i++;  
+                current = current.next;  
+            }  
+        }  
+        if(flag)  
+             System.out.println("Element is present in the list at the position : " + i);  
+        else  
+             System.out.println("Element is not present in the list");  
+    }  
+  
+    public static void main(String[] args) {  
+  
+        SearchLinkedList sList = new SearchLinkedList();  
+  
+        //Add nodes to the list  
+        sList.addNode(1);  
+        sList.addNode(2);  
+        sList.addNode(3);  
+        sList.addNode(4);  
+  
+        //Search for node 2 in the list  
+        sList.searchNode(2);  
+        //Search for a node  in the list  
+        sList.searchNode(7);  
+    }}  
+----------------------------------------------------------
