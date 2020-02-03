@@ -1,0 +1,120 @@
+Code Camp Day-2
+Participants must follow the order while solving the following questions:
+
+a.       Write the algorithm.
+
+b.       Write the source code. Give appropriate comments whenever it is necessary in the source code.
+
+c.       Generate API documentation in HTML format from the java source code. Note: Use Javadoc.
+
+d.       Compile and run the source code and finally produce the expected output.
+
+e.       Note down the time taken for designing source code, compilation and successful execution of source code.
+
+f.        Capture all above mentioned in a word document and upload into the LMS.
+
+ 
+
+1.       Take a input for 3 subject marks for 3 scholars for ECP-01 and 3 subject marks for 3 scholars for ECP-02 and find the subject wise average marks of ECP-01 and ECP-02.
+
+Hint:   Subject1: Digital_Logic
+
+            Subject2: Networking
+
+            Subject 3: JAVA
+
+2. WAP in Java to how to compare two array values and   and display :
+
+1. Common values
+
+2. Distinct Values.
+
+3.  Write a Java method to check whether a string is a valid password.
+
+           Password rules:
+
+           A password must have at least ten characters.
+
+           A password consists of only letters and digits.
+
+           A password must contain at least two digits.
+
+4. Write a Java method to display the middle character of a string.
+
+1. Note:
+
+ a) If the length of the string is odd there will be two middle characters.
+
+ b) If the length of the string is even there will be one middle character.
+
+ Test Data:
+
+ Input a string : 350
+
+ Expected Output:The middle character in the st
+
+5. Write a java program to read a string and print whether the string is palindrome or not.
+
+6. Write a program which accepts days as integer and display total number of years, months and days in it.
+
+           Assume 1 Year = 365 Days
+
+Session-2
+
+ 
+
+7. In a company an employee is paid as under:
+
+ 
+
+If his basic salary is less than Rs. 1500, then HRA = 10% of basic salary and DA = 90%  of basic salary.
+
+ 
+
+If his salary is either equal to or above Rs. 1500, then HRA = Rs. 500 and DA =98% of basic salary.
+
+ 
+
+If the employee's salary is taken from user write a program to find his gross salary.
+
+ 
+
+ 
+
+8. Write a Java Program to find smallest of an int array. The array is of size 10 and values should be taken from user.
+
+9. Write a Java program to accept 10 Strings in an array. And for each string print length and reverse string.
+
+ 
+
+ Hint : use String method and StringBuffer class
+
+ 
+
+ 
+
+10. Write a Program to Find the absolute maximum value of a given array of int
+
+ 
+
+            Numbers.
+
+ 
+
+            Hint : Absolute value is without sign(+ or -)
+
+11. WAP in Java to print below pattern: \
+
+                              *
+
+                             ***
+
+                            *****
+
+                          *******
+
+                        *********
+
+1.       Note: No of rows should be accepted from user.
+
+ 
